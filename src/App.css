@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* text-color: #5e5d72 */
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.logoWraper{
+  text-decoration: none;
+}
+.logoWraper span {
+  color: #5e5d72;
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* header .logoWraper img {
+  width: 50px;
+  height: 100%;
+}
+
+
+
+header .rounded-btn{
+  min-width: 40px !important;
+  width: 40px ! important;
+  height: 40px ! important;
+  background-color: #f0f5ff !important;
+  color: #5e5d72;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+header .rounded-btn:hover{
+  color: #0858f7;
+}
+
+header .searchBox{
+  height: 40px ! important;
+  background-color: #f0f5ff !important;
+  color: #5e5d72;
+} */
