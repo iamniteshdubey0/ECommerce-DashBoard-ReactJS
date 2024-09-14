@@ -8,6 +8,7 @@ import BestSelling from "../../../components/Sections/BestSelling";
 import { useSidebar } from "../../../components/Context/SidebarContext";
 import CPieChart from "../../../components/Charts/CPieChart";
 import CBarChart from "../../../components/Charts/CBarChart";
+import PopularClientTable from "../../../components/CustomComponenet/TableCustom/PopularClientTable";
 
 const Dashboard = () => {
   const { isSidebarOpen } = useSidebar();
@@ -67,6 +68,14 @@ const Dashboard = () => {
           <CBarChart />
         </Grid>
         <Grid size={4} sx={{ p: 1 }}>
+          <CPieChart />
+        </Grid>
+      </Grid>
+      <Grid container spacing={2} sx={{ mt: 4 }}>
+        <Grid size={6} sx={{ p: 1 }}>
+          <PopularClientTable />
+        </Grid>
+        <Grid size={6} sx={{ p: 1 }}>
           <CPieChart />
         </Grid>
       </Grid>
