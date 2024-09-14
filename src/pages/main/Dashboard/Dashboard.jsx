@@ -7,11 +7,11 @@ import CardCustom2 from "../../../components/CustomComponenet/CardCustom/CardCus
 import BestSelling from "../../../components/Sections/BestSelling";
 import { useSidebar } from "../../../components/Context/SidebarContext";
 import CPieChart from "../../../components/Charts/CPieChart";
+import CBarChart from "../../../components/Charts/CBarChart";
 
 const Dashboard = () => {
   const { isSidebarOpen } = useSidebar();
 
-  
   return (
     <Box
       component="section"
@@ -63,10 +63,10 @@ const Dashboard = () => {
       </Grid>
       <BestSelling></BestSelling>
       <Grid container spacing={2} sx={{ mt: 4 }}>
-        <Grid size={7} sx={{ p: 1 }}>
-          <CardCustom color={"primary"} heading={"Total Users"}></CardCustom>
+        <Grid size={8} sx={{ p: 1 }}>
+          <CBarChart />
         </Grid>
-        <Grid size={5} sx={{ p: 1 }}>
+        <Grid size={4} sx={{ p: 1 }}>
           <CPieChart />
         </Grid>
       </Grid>
