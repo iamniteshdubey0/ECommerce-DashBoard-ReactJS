@@ -9,6 +9,7 @@ import { useSidebar } from "../../../components/Context/SidebarContext";
 import CPieChart from "../../../components/Charts/CPieChart";
 import CBarChart from "../../../components/Charts/CBarChart";
 import PopularClientTable from "../../../components/CustomComponenet/TableCustom/PopularClientTable";
+import CustomTimeline from "../../../components/CustomComponenet/CustomTimeline/CustomTimeline";
 
 const Dashboard = () => {
   const { isSidebarOpen } = useSidebar();
@@ -76,7 +77,7 @@ const Dashboard = () => {
           <PopularClientTable />
         </Grid>
         <Grid size={6} sx={{ p: 1 }}>
-          <CPieChart />
+          <CustomTimeline />
         </Grid>
       </Grid>
     </Box>
