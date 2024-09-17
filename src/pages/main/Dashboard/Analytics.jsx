@@ -11,10 +11,11 @@ import CBarChart from "../../../components/Charts/CBarChart";
 import PopularClientTable from "../../../components/CustomComponenet/TableCustom/PopularClientTable";
 import CustomTimeline from "../../../components/CustomComponenet/CustomTimeline/CustomTimeline";
 import Footer from "../../../components/Footer/Footer";
+import CardLineChart from "../../../components/Charts/CardLineChart";
+import StackedBarChart from "../../../components/Charts/StackedBarChart";
 
-const Dashboard = () => {
+const Analytics = () => {
   const { isSidebarOpen } = useSidebar();
-
   return (
     <Box
       component="section"
@@ -38,37 +39,45 @@ const Dashboard = () => {
       })}
     >
       <BreadcrumCustom
-        title="Dashboard"
+        title="Analytics"
         text="Home"
-        textlink="/charts"
+        textlink="/dashboard"
       ></BreadcrumCustom>
-      <Grid container spacing={2} sx={{ mt: 4 }}>
-        <Grid container size={8}>
-          <Grid size={6} sx={{ p: 1 }}>
-            <CardCustom color={"primary"} heading={"Total Users"}></CardCustom>
-          </Grid>
-          <Grid size={6} sx={{ p: 1 }}>
-            <CardCustom color={"success"} heading={"card2"}></CardCustom>
-          </Grid>
-          <Grid size={6} sx={{ p: 1 }}>
-            <CardCustom color={"error"} heading={"card3"}></CardCustom>
-          </Grid>
-          <Grid size={6} sx={{ p: 1 }}>
-            <CardCustom color={"secondary"} heading={"card4"}></CardCustom>
-          </Grid>
+      <Grid container spacing={1} sx={{ mt: 4 }}>
+        <Grid size={3} sx={{ p: 1 }}>
+          <CardLineChart
+            color={"primary"}
+            heading={"impressions"}
+            value={"15458K"}
+          ></CardLineChart>
         </Grid>
-        <Grid size={4}>
-          <Grid size={12} sx={{ p: 1 }}>
-            <CardCustom2 color="neutral" heading="card3" />
-          </Grid>
+        <Grid size={3} sx={{ p: 1 }}>
+          <CardLineChart
+            color={"secondary"}
+            heading={"engagements"}
+            value={"12458.74K"}
+          ></CardLineChart>
+        </Grid>
+        <Grid size={3} sx={{ p: 1 }}>
+          <CardLineChart
+            color={"primary"}
+            heading={"conversions"}
+            value={"10458.74K"}
+          ></CardLineChart>
+        </Grid>
+        <Grid size={3} sx={{ p: 1 }}>
+          <CardLineChart
+            color={"secondary"}
+            value={"9458.74K"}
+            heading={"bounce rate"}
+          ></CardLineChart>
         </Grid>
       </Grid>
-      <BestSelling></BestSelling>
       <Grid container spacing={2} sx={{ mt: 4 }}>
-        <Grid size={8} sx={{ p: 1 }}>
-          <CBarChart />
+        <Grid size={7} sx={{ p: 1 }}>
+          <StackedBarChart></StackedBarChart>
         </Grid>
-        <Grid size={4} sx={{ p: 1 }}>
+        <Grid size={5} sx={{ p: 1 }}>
           <CPieChart />
         </Grid>
       </Grid>
@@ -85,4 +94,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Analytics;

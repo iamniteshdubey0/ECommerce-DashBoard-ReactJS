@@ -55,7 +55,26 @@ const PopularClientTable = () => {
           <MoreVertIcon fontSize="small" />
         </IconButton>
       </Box>
-      <TableContainer sx={{ p: 1, height: "410px", overflowY: "auto" }}>
+      <TableContainer
+        sx={{
+          p: 1,
+          height: "410px",
+          overflowY: "auto",
+          "&::-webkit-scrollbar": {
+            width: "3px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: theme.palette.primary.main,
+            borderRadius: "2px",
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            backgroundColor: theme.palette.primary.dark,
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "transparent",
+          },
+        }}
+      >
         <Table
           sx={{
             "& .MuiTableCell-root": {

@@ -29,7 +29,7 @@ const CardCustom = ({ color, heading }) => {
             last month
             </Typography>
           </Grid>
-          <Grid size={4} sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <Grid size={4} sx={{ display: "flex", justifyContent: "flex-end", pr:0.5 }}>
             <IconButton edge="end" aria-label="delete">
               <MoreVertIcon fontSize="small" />
             </IconButton>

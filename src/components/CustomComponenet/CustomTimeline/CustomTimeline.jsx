@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../../theme";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -8,8 +8,9 @@ import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 const CustomTimeline = () => {
   const theme = useTheme();
@@ -42,30 +43,186 @@ const CustomTimeline = () => {
           <MoreVertIcon fontSize="small" />
         </IconButton>
       </Box>
-      <Box sx={{
-        display:'flex',
-        justifyContent:'flex-start'
-      }}>
-        <Timeline position="alternate">
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "flex-start",
+          overflowY: "auto",
+          maxHeight: "410px",
+          "&::-webkit-scrollbar": {
+            width: "3px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: theme.palette.primary.main,
+            borderRadius: "2px",
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            backgroundColor: theme.palette.primary.dark,
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "transparent",
+          },
+        }}
+      >
+        <Timeline
+          sx={{
+            "& .MuiTimelineItem-root": {
+              minHeight: "180px",
+            },
+          }}
+        >
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot />
+              <TimelineDot></TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>Eat</TimelineContent>
+            <TimelineOppositeContent sx={{ textAlign: "left" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  mb: 2,
+                }}
+              >
+                <Typography variant="h5">Your account is logged in</Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <AccessTimeIcon sx={{ fontSize: "12px", mr: 0.5 }} /> 15 min
+                  ago
+                </Typography>
+              </Box>
+              <Typography color="text.secondary" variant="body1" sx={{ mb: 2 }}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+                nisi minima reprehenderit corporis odit tempore.nisi minima
+                reprehenderit corporis odit tempore.
+              </Typography>
+              <Button variant="outlined" color="primary">
+                Action
+              </Button>
+            </TimelineOppositeContent>
           </TimelineItem>
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot />
+              <TimelineDot></TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>Code</TimelineContent>
+            <TimelineOppositeContent sx={{ textAlign: "left" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  mb: 2,
+                }}
+              >
+                <Typography variant="h5">New product is listed</Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <AccessTimeIcon sx={{ fontSize: "12px", mr: 0.5 }} /> 15 min
+                  ago
+                </Typography>
+              </Box>
+              <Typography color="text.secondary" variant="body1" sx={{ mb: 2 }}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+                nisi minima reprehenderit corporis odit tempore.nisi minima
+                reprehenderit corporis odit tempore.
+              </Typography>
+              <Button variant="contained" color="secondary">
+                Some Action
+              </Button>
+            </TimelineOppositeContent>
+          </TimelineItem>
+
+          <TimelineItem>
+            <TimelineSeparator>
+              <TimelineDot></TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineOppositeContent sx={{ textAlign: "left" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  mb: 2,
+                }}
+              >
+                <Typography variant="h5">Your account is logged in</Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <AccessTimeIcon sx={{ fontSize: "12px", mr: 0.5 }} /> 15 min
+                  ago
+                </Typography>
+              </Box>
+              <Typography color="text.secondary" variant="body1" sx={{ mb: 2 }}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+                nisi minima reprehenderit corporis odit tempore.nisi minima
+                reprehenderit corporis odit tempore.
+              </Typography>
+              <Button variant="outlined" color="primary">
+                Action
+              </Button>
+            </TimelineOppositeContent>
           </TimelineItem>
           <TimelineItem>
             <TimelineSeparator>
-              <TimelineDot />
+              <TimelineDot></TimelineDot>
+              <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent>Sleep</TimelineContent>
+            <TimelineOppositeContent sx={{ textAlign: "left" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  mb: 2,
+                }}
+              >
+                <Typography variant="h5">New product is listed</Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <AccessTimeIcon sx={{ fontSize: "12px", mr: 0.5 }} /> 15 min
+                  ago
+                </Typography>
+              </Box>
+              <Typography color="text.secondary" variant="body1" sx={{ mb: 2 }}>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+                nisi minima reprehenderit corporis odit tempore.nisi minima
+                reprehenderit corporis odit tempore.
+              </Typography>
+              <Button variant="contained" color="secondary">
+                Some Action
+              </Button>
+            </TimelineOppositeContent>
           </TimelineItem>
         </Timeline>
       </Box>

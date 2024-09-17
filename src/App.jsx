@@ -10,6 +10,7 @@ import { useUser } from "./components/Context/UserContext";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import PasswordReset from "./pages/auth/PasswordReset";
+import Analytics from "./pages/main/Dashboard/Analytics";
 
 function App() {
   const { isSidebarOpen } = useSidebar();
@@ -36,6 +37,7 @@ function App() {
               <>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/analytics" element={<Analytics />} />
                 <Route path="/charts" element={<Charts />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </>

@@ -173,6 +173,7 @@ const SideBar = () => {
                           }}
                         >
                           <ListItemButton
+                            selected={linkActive === subItem.id}
                             key={subItem.id}
                             sx={{
                               borderRadius: 2,

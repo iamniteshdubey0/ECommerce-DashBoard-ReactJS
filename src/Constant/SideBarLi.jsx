@@ -43,7 +43,7 @@ const SIDEBAR_LIST = [
             id: "anyltics",
             label: "Anyltics",
             icon: <DataThresholdingIcon />,
-            path: "/dashboard",
+            path: "/analytics",
           },
           { id: "crm", label: "Crm", icon: <AddchartIcon />, path: "/crm" },
         ],
