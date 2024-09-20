@@ -5,11 +5,11 @@ import Grid from "@mui/material/Grid2";
 import { useSidebar } from "../../../components/Context/SidebarContext";
 import CustomTimeline from "../../../components/CustomComponenet/CustomTimeline/CustomTimeline";
 import Footer from "../../../components/Footer/Footer";
-import CardLineChart from "../../../components/Charts/CardLineChart";
+import CardBarChart from "../../../components/Charts/CardBarChart";
 import StackedBarChart from "../../../components/Charts/StackedBarChart";
 import PageViews from "../../../components/CustomComponenet/TableCustom/Pageviews";
 
-const Analytics = () => {
+const Crm = () => {
   const { isSidebarOpen } = useSidebar();
   return (
     <Box
@@ -34,38 +34,38 @@ const Analytics = () => {
       })}
     >
       <BreadcrumCustom
-        title="Analytics"
+        title="Crm"
         text="Home"
         textlink="/dashboard"
       ></BreadcrumCustom>
       <Grid container spacing={1} sx={{ mt: 4 }}>
-        <Grid size={3} sx={{ p: 1 }}>
-          <CardLineChart
+        <Grid size={6} sx={{ p: 1 }}>
+          <CardBarChart
             color={"primary"}
             heading={"impressions"}
             value={"15458K"}
-          ></CardLineChart>
+          ></CardBarChart>
         </Grid>
-        <Grid size={3} sx={{ p: 1 }}>
-          <CardLineChart
+        <Grid size={6} sx={{ p: 1 }}>
+          <CardBarChart
             color={"secondary"}
             heading={"engagements"}
             value={"12458.74K"}
-          ></CardLineChart>
+          ></CardBarChart>
         </Grid>
-        <Grid size={3} sx={{ p: 1 }}>
-          <CardLineChart
+        <Grid size={6} sx={{ p: 1 }}>
+          <CardBarChart
             color={"primary"}
             heading={"conversions"}
             value={"10458.74K"}
-          ></CardLineChart>
+          ></CardBarChart>
         </Grid>
-        <Grid size={3} sx={{ p: 1 }}>
-          <CardLineChart
+        <Grid size={6} sx={{ p: 1 }}>
+          <CardBarChart
             color={"secondary"}
             value={"9458.74K"}
             heading={"bounce rate"}
-          ></CardLineChart>
+          ></CardBarChart>
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 4 }}>
@@ -89,4 +89,4 @@ const Analytics = () => {
   );
 };
 
-export default Analytics;
+export default Crm;

@@ -30,7 +30,7 @@ const BreadcrumCustom = ({ textlink, text, title, sText }) => {
       })}
     >
       <Grid size={8}>
-        <Typography sx={{ color: "text.primary" }}>{title}</Typography>
+        <Typography variant="h4" sx={{ color: "text.primary" }}>{title}</Typography>
       </Grid>
       <Grid size={4} sx={{ display: "flex", justifyContent: "flex-end" }}>
         <Breadcrumbs aria-label="breadcrumb">
