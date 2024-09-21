@@ -99,6 +99,7 @@ const StackedBarChart = () => {
           ]}
           xAxis={[{ data: xLabels, scaleType: "band", categoryGapRatio: 0.6 }]}
           yAxis={[{disableTicks:"true"}]}
+          leftAxis={null}
           slots={{
             axisLine:'none',
             axisTick:'none'

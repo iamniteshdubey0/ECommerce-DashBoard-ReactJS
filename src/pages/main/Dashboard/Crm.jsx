@@ -42,7 +42,7 @@ const Crm = () => {
         <Grid size={6} sx={{ p: 1 }}>
           <CardBarChart
             color={"primary"}
-            heading={"impressions"}
+            heading={"campaign sent"}
             value={"15458K"}
           ></CardBarChart>
         </Grid>
