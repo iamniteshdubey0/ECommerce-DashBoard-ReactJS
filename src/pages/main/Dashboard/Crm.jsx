@@ -7,7 +7,7 @@ import CustomTimeline from "../../../components/CustomComponenet/CustomTimeline/
 import Footer from "../../../components/Footer/Footer";
 import CardBarChart from "../../../components/Charts/CardBarChart";
 import StackedBarChart from "../../../components/Charts/StackedBarChart";
-import PageViews from "../../../components/CustomComponenet/TableCustom/Pageviews";
+import PageViews from "../../../components/CustomComponenet/DataTable/Pageviews";
 
 const Crm = () => {
   const { isSidebarOpen } = useSidebar();
@@ -55,14 +55,14 @@ const Crm = () => {
         </Grid>
         <Grid size={6} sx={{ p: 1 }}>
           <CardBarChart
-            color={"primary"}
+            color={"success"}
             heading={"conversions"}
             value={"10458.74K"}
           ></CardBarChart>
         </Grid>
         <Grid size={6} sx={{ p: 1 }}>
           <CardBarChart
-            color={"secondary"}
+            color={"error"}
             value={"9458.74K"}
             heading={"bounce rate"}
           ></CardBarChart>

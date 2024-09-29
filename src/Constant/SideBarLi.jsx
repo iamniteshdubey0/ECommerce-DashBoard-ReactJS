@@ -58,7 +58,7 @@ const SIDEBAR_LIST = [
             id: "userList",
             label: "User List",
             icon: <RecentActorsIcon />,
-            path: "/userList",
+            path: "/user-list",
           },
           {
             id: "userProfile",

@@ -16,7 +16,7 @@ const CardCustom = ({ color, heading }) => {
         width: "100%",
         maxHeight: "165px",
         minHeight: "130px",
-        backgroundImage: `linear-gradient(to right, ${theme.palette[color].main}, ${theme.palette[color].dark})`,
+        backgroundImage: `linear-gradient(to right, ${theme.palette[color].main}, ${theme.palette[color].light})`,
         borderRadius: 2,
         color: "white",
       })}

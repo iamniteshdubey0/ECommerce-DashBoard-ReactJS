@@ -2,15 +2,13 @@ import React from "react";
 import BreadcrumCustom from "../../../components/CustomComponenet/BreadcrumCustom/BreadcrumCustom";
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { useSidebar } from "../../../components/Context/SidebarContext";
 import CustomTimeline from "../../../components/CustomComponenet/CustomTimeline/CustomTimeline";
 import Footer from "../../../components/Footer/Footer";
 import CardLineChart from "../../../components/Charts/CardLineChart";
 import StackedBarChart from "../../../components/Charts/StackedBarChart";
-import PageViews from "../../../components/CustomComponenet/TableCustom/Pageviews";
+import PageViews from "../../../components/CustomComponenet/DataTable/Pageviews";
 
 const Analytics = () => {
-  const { isSidebarOpen } = useSidebar();
   return (
     <Box
       component="section"
@@ -41,7 +39,7 @@ const Analytics = () => {
       <Grid container spacing={1} sx={{ mt: 4 }}>
         <Grid size={3} sx={{ p: 1 }}>
           <CardLineChart
-            color={"primary"}
+            color={"error"}
             heading={"impressions"}
             value={"15458K"}
           ></CardLineChart>
@@ -55,14 +53,14 @@ const Analytics = () => {
         </Grid>
         <Grid size={3} sx={{ p: 1 }}>
           <CardLineChart
-            color={"primary"}
+            color={"success"}
             heading={"conversions"}
             value={"10458.74K"}
           ></CardLineChart>
         </Grid>
         <Grid size={3} sx={{ p: 1 }}>
           <CardLineChart
-            color={"secondary"}
+            color={"primary"}
             value={"9458.74K"}
             heading={"bounce rate"}
           ></CardLineChart>
@@ -73,7 +71,7 @@ const Analytics = () => {
           <StackedBarChart></StackedBarChart>
         </Grid>
         <Grid size={5} sx={{ p: 1 }}>
-        <PageViews />
+          <PageViews />
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 4 }}>

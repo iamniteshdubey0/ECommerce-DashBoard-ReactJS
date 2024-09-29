@@ -93,6 +93,7 @@ const StackedBarChart = () => {
           width={600}
           height={400}
           borderRadius={"10"}
+          colors={[colors.warning[500], colors.secondary[500]]}
           series={[
             { data: pData, label: "pv", id: "pvId", stack: "total" },
             { data: uData, label: "uv", id: "uvId", stack: "total" },

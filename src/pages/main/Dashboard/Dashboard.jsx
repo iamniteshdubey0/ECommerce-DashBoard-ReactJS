@@ -2,19 +2,17 @@ import React from "react";
 import BreadcrumCustom from "../../../components/CustomComponenet/BreadcrumCustom/BreadcrumCustom";
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import CardCustom from "../../../components/CustomComponenet/CardCustom/CardCustom";
-import CardCustom2 from "../../../components/CustomComponenet/CardCustom/CardCustom2";
-import BestSelling from "../../../components/Sections/BestSelling";
-import { useSidebar } from "../../../components/Context/SidebarContext";
+import CardCustom from "../../../components/CustomComponenet/CardCustom/NormalCard";
+import CardCustom2 from "../../../components/CustomComponenet/CardCustom/LargeCard";
 import CPieChart from "../../../components/Charts/CPieChart";
 import CBarChart from "../../../components/Charts/CBarChart";
-import PopularClientTable from "../../../components/CustomComponenet/TableCustom/PopularClientTable";
+import PopularClientTable from "../../../components/CustomComponenet/DataTable/PopularClientTable";
 import CustomTimeline from "../../../components/CustomComponenet/CustomTimeline/CustomTimeline";
 import Footer from "../../../components/Footer/Footer";
+import DataTableSec from "../../../components/Sections/DataTableSec";
+import TableCustom from "../../../components/CustomComponenet/DataTable/TableCustom";
 
 const Dashboard = () => {
-  const { isSidebarOpen } = useSidebar();
-
   return (
     <Box
       component="section"
@@ -63,7 +61,9 @@ const Dashboard = () => {
           </Grid>
         </Grid>
       </Grid>
-      <BestSelling></BestSelling>
+      <DataTableSec label={"Best Selling"}>
+        <TableCustom></TableCustom>
+      </DataTableSec>
       <Grid container spacing={2} sx={{ mt: 4 }}>
         <Grid size={8} sx={{ p: 1 }}>
           <CBarChart />

@@ -4,18 +4,13 @@ import Grid from "@mui/material/Grid2";
 import { Typography } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import IconButton from "@mui/material/IconButton";
-import TableCustom from "../CustomComponenet/TableCustom/TableCustom";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 
-const BestSelling = () => {
-  const [age, setAge] = React.useState("");
+const DataTableSec = ({ label, children }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
   return (
     <Paper
       elevation={2}
@@ -41,18 +36,16 @@ const BestSelling = () => {
           }}
         >
           <Typography variant="h6" sx={{ textTransform: "capitalize", mb: 0 }}>
-            best selling products
+            {label}
           </Typography>
           <IconButton edge="end" aria-label="delete">
             <MoreVertIcon fontSize="small" />
           </IconButton>
         </Grid>
-        <Grid size={12}>
-          <TableCustom></TableCustom>
-        </Grid>
+        <Grid size={12}>{children}</Grid>
       </Grid>
     </Paper>
   );
 };
 
-export default BestSelling;
+export default DataTableSec;

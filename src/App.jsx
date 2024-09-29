@@ -12,6 +12,7 @@ import Signup from "./pages/auth/Signup";
 import PasswordReset from "./pages/auth/PasswordReset";
 import Analytics from "./pages/main/Dashboard/Analytics";
 import Crm from "./pages/main/Dashboard/Crm";
+import UserList from "./pages/main/Users/userList";
 
 function App() {
   const { isSidebarOpen } = useSidebar();
@@ -41,6 +42,7 @@ function App() {
                 <Route path="/analytics" element={<Analytics />} />
                 <Route path="/crm" element={<Crm />} />
                 <Route path="/charts" element={<Charts />} />
+                <Route path="/user-list" element={<UserList />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </>
             ) : (
