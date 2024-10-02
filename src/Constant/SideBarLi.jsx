@@ -48,32 +48,7 @@ const SIDEBAR_LIST = [
           { id: "crm", label: "Crm", icon: <AddchartIcon />, path: "/crm" },
         ],
       },
-      {
-        id: "users",
-        label: "Users",
-        icon: <PeopleIcon />,
-        path: "/users",
-        subItems: [
-          {
-            id: "userList",
-            label: "User List",
-            icon: <RecentActorsIcon />,
-            path: "/user-list",
-          },
-          {
-            id: "userProfile",
-            label: "User Profile",
-            icon: <BadgeIcon />,
-            path: "/userProfile",
-          },
-          {
-            id: "myProfile",
-            label: "My Profile",
-            icon: <AdminPanelSettingsIcon />,
-            path: "/myProfile",
-          },
-        ],
-      },
+
       {
         id: "product",
         label: "Product",
@@ -114,6 +89,13 @@ const SIDEBAR_LIST = [
             path: "/invoiceDetails",
           },
         ],
+      },
+      {
+        id: "users",
+        label: "Users",
+        icon: <PeopleIcon />,
+        path: "/user-list",
+        subItems: [],
       },
       {
         id: "orders",
