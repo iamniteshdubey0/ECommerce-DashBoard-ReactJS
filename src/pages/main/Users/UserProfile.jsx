@@ -1,6 +1,6 @@
 import React from "react";
 import BreadcrumCustom from "../../../components/CustomComponenet/BreadcrumCustom/BreadcrumCustom";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, TextField } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Footer from "../../../components/Footer/Footer";
 import { useTheme } from "@mui/material";
@@ -9,6 +9,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
+import Chip from "@mui/material/Chip";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -24,6 +25,8 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { styled } from "@mui/material/styles";
 
 const UserProfile = () => {
   const theme = useTheme();
@@ -48,6 +51,18 @@ const UserProfile = () => {
       }
     }
   }, [open]);
+
+  const VisuallyHiddenInput = styled("input")({
+    clip: "rect(0 0 0 0)",
+    clipPath: "inset(50%)",
+    height: 1,
+    overflow: "hidden",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    whiteSpace: "nowrap",
+    width: 1,
+  });
   return (
     <Box
       component="section"
@@ -142,26 +157,221 @@ const UserProfile = () => {
                   aria-labelledby="scroll-dialog-title"
                   aria-describedby="scroll-dialog-description"
                 >
-                  <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-                  <DialogContent >
+                  <DialogTitle id="scroll-dialog-title">
+                    Edit Profile
+                  </DialogTitle>
+                  <DialogContent>
                     <DialogContentText
                       id="scroll-dialog-description"
                       ref={descriptionElementRef}
                       tabIndex={-1}
                     >
-                      {[...new Array(50)]
-                        .map(
-                          () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-                        )
-                        .join("\n")}
+                      <Box component="div" sx={{ p: 1, mb: 5 }}>
+                        <Divider textAlign="left" sx={{ mb: 3 }}>
+                          <Chip
+                            color="primary"
+                            label="Personal Details"
+                            size="small"
+                          />
+                        </Divider>
+
+                        <Grid
+                          container
+                          spacing={2}
+                          noValidate
+                          autoComplete="off"
+                          component={"form"}
+                        >
+                          <Grid size={3}>
+                            <Box
+                              component={"div"}
+                              sx={{
+                                p: 1,
+                                display: "flex",
+                                justifyContent: "center",
+                                flexDirection: "column",
+                              }}
+                            >
+                              <Avatar
+                                alt="Remy Sharp"
+                                src="/static/images/avatar/1.jpg"
+                                sx={{ width: 100, height: 100, mb: 3 }}
+                              />
+
+                              <Button
+                                variant="contained"
+                                component="label"
+                                role={undefined}
+                                tabIndex={-1}
+                                startIcon={<CloudUploadIcon />}
+                              >
+                                Upload
+                                <VisuallyHiddenInput
+                                  type="file"
+                                  onChange={(event) =>
+                                    console.log(event.target.files)
+                                  }
+                                  multiple
+                                />
+                              </Button>
+                            </Box>
+                          </Grid>
+                          <Grid container size={9}>
+                            <Grid size={6}>
+                              <TextField
+                                id="name"
+                                label="Full Name"
+                                variant="outlined"
+                                size="small"
+                                fullWidth
+                              />
+                            </Grid>
+                            <Grid size={6}>
+                              <TextField
+                                id="userName"
+                                label="UserName"
+                                variant="outlined"
+                                size="small"
+                                fullWidth
+                              />
+                            </Grid>
+                            <Grid size={12}>
+                              <TextField
+                                fullWidth
+                                id="userBiography"
+                                label="Biography"
+                                multiline
+                                rows={4}
+                              />
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                      </Box>
+
+                      <Box component="div" sx={{ p: 1, my: 3 }}>
+                        <Divider textAlign="left" sx={{ mb: 3 }}>
+                          <Chip
+                            color="secondary"
+                            label="Contact Details"
+                            size="small"
+                          />
+                        </Divider>
+
+                        <Grid
+                          container
+                          spacing={2}
+                          noValidate
+                          autoComplete="off"
+                          component={"form"}
+                        >
+                          <Grid size={6}>
+                            <TextField
+                              id="phone"
+                              label="Phone Number"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                          <Grid size={6}>
+                            <TextField
+                              id="alt-phone"
+                              label="Alternate Phone Number"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                          <Grid size={6}>
+                            <TextField
+                              id="email"
+                              label="Email Address"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                          <Grid size={6}>
+                            <TextField
+                              id="website"
+                              label="Personal Website"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                          <Grid size={12}>
+                            <TextField
+                              id="address"
+                              label="Address"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                              multiline
+                              rows={2}
+                            />
+                          </Grid>
+                        </Grid>
+                      </Box>
+
+                      <Box component="div" sx={{ p: 1, my: 3 }}>
+                        <Divider textAlign="left" sx={{ mb: 3 }}>
+                          <Chip
+                            color="secondary"
+                            label="SocialMedia"
+                            size="small"
+                          />
+                        </Divider>
+
+                        <Grid
+                          container
+                          spacing={2}
+                          noValidate
+                          autoComplete="off"
+                          component={"form"}
+                        >
+                          <Grid size={6}>
+                            <TextField
+                              id="userLinkedin"
+                              label="LinkedIn Url"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                          <Grid size={6}>
+                            <TextField
+                              id="userInstagram"
+                              label="Instagram Url"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                          <Grid size={6}>
+                            <TextField
+                              id="userX"
+                              label="X (Twitter) Url"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                        </Grid>
+                      </Box>
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Subscribe</Button>
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      onClick={handleClose}
+                    >
+                      Cancel
+                    </Button>
+                    <Button variant="contained" onClick={handleClose}>
+                      Update
+                    </Button>
                   </DialogActions>
                 </Dialog>
               </Box>
