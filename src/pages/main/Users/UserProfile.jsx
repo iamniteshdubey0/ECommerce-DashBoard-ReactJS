@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BreadcrumCustom from "../../../components/CustomComponenet/BreadcrumCustom/BreadcrumCustom";
 import { Box, Button, Typography, TextField } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -27,20 +27,28 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled } from "@mui/material/styles";
+import SettingsIcon from "@mui/icons-material/Settings";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import FormLabel from "@mui/material/FormLabel";
 
 const UserProfile = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = useState({});
 
-  const handleClickOpen = () => () => {
-    setOpen(true);
+  const handleClick = (event, modalType) => {
+    setAnchorEl((prev) => ({ ...prev, [modalType]: event.currentTarget }));
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleClose = (modalType) => {
+    setAnchorEl((prev) => ({ ...prev, [modalType]: null }));
   };
+
+  const openSetting = Boolean(anchorEl.setting);
+  const openProfile = Boolean(anchorEl.profile);
 
   const descriptionElementRef = React.useRef(null);
   React.useEffect(() => {
@@ -148,21 +156,206 @@ const UserProfile = () => {
                 </Box>
               </Box>
               <Box>
-                <IconButton aria-label="setting" onClick={handleClickOpen()}>
+                <IconButton
+                  aria-label="setting"
+                  onClick={(event) => handleClick(event, "setting")}
+                >
+                  <SettingsIcon fontSize="small"></SettingsIcon>
+                </IconButton>
+
+                <Dialog
+                  open={openSetting}
+                  anchorEl={anchorEl.setting}
+                  onClose={() => handleClose("setting")}
+                  aria-labelledby="modal-setting"
+                  aria-describedby="smodal-setting"
+                >
+                  <DialogTitle id="scroll-dialog-title">Settings</DialogTitle>
+                  <DialogContent>
+                    <DialogContentText
+                      id="modal-setting"
+                      ref={descriptionElementRef}
+                      tabIndex={-1}
+                    >
+                      <Box component="div" sx={{ p: 1, mb: 5 }}>
+                        <Divider textAlign="left" sx={{ mb: 3 }}>
+                          <Chip
+                            color="primary"
+                            label="Change PassWord"
+                            size="small"
+                          />
+                        </Divider>
+                        <Grid
+                          container
+                          spacing={2}
+                          noValidate
+                          autoComplete="off"
+                          component={"form"}
+                        >
+                          <Grid size={12}>
+                            <TextField
+                              id="currentPassword"
+                              label="Current Password"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                          <Grid size={6}>
+                            <TextField
+                              id="newPassword"
+                              label="New Password"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                          <Grid size={6}>
+                            <TextField
+                              id="confirmNewPassword"
+                              label="Confirm New Password"
+                              variant="outlined"
+                              size="small"
+                              fullWidth
+                            />
+                          </Grid>
+                        </Grid>
+                      </Box>
+
+                      <Box component="div" sx={{ p: 1, my: 3 }}>
+                        <Divider textAlign="left" sx={{ mb: 3 }}>
+                          <Chip
+                            color="secondary"
+                            label="Other Settings"
+                            size="small"
+                          />
+                        </Divider>
+                        <Grid
+                          container
+                          spacing={2}
+                          noValidate
+                          autoComplete="off"
+                          component={"form"}
+                        >
+                          <Grid
+                            size={6}
+                            sx={{ display: "flex", justifyContent: "center" }}
+                          >
+                            <FormGroup>
+                              <FormLabel
+                                component="legend"
+                                sx={{ mb: 2, fontWeight: "bold" }}
+                              >
+                                Product Email Settings
+                              </FormLabel>
+                              <FormControlLabel
+                                control={<Switch />}
+                                label="Send Copy To Personal Email"
+                              />
+                              <FormControlLabel
+                                control={<Switch />}
+                                label="New membership approval"
+                              />
+                              <FormControlLabel
+                                control={<Switch />}
+                                label="Someone adds you as a connection"
+                              />
+                              <FormControlLabel
+                                control={<Switch />}
+                                label="Required"
+                              />
+
+                              <FormControlLabel
+                                control={<Switch defaultChecked />}
+                                label="Label"
+                              />
+                            </FormGroup>
+                          </Grid>
+
+                          <Grid
+                            size={6}
+                            sx={{ display: "flex", justifyContent: "center" }}
+                          >
+                            <FormGroup>
+                              <FormLabel
+                                component="legend"
+                                sx={{ mb: 2, fontWeight: "bold" }}
+                              >
+                                Activity Email Settings
+                              </FormLabel>
+                              <FormControlLabel
+                                control={<Switch />}
+                                label="Send Copy To Personal Email"
+                              />
+                              <FormControlLabel
+                                control={<Switch />}
+                                label="New membership approval"
+                              />
+                              <FormControlLabel
+                                control={<Switch />}
+                                label="Someone adds you as a connection"
+                              />
+                              <FormControlLabel
+                                control={<Switch />}
+                                label="Required"
+                              />
+
+                              <FormControlLabel
+                                control={<Switch defaultChecked />}
+                                label="Label"
+                              />
+                            </FormGroup>
+                          </Grid>
+                        </Grid>
+                      </Box>
+
+                      <Box component="div" sx={{ p: 1, my: 3 }}>
+                        <Divider textAlign="left" sx={{ mb: 3 }}>
+                          <Chip
+                            color="secondary"
+                            label="Additional Settings"
+                            size="small"
+                          />
+                        </Divider>
+                      </Box>
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      onClick={() => handleClose("setting")}
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      variant="contained"
+                      onClick={() => handleClose("setting")}
+                    >
+                      Update
+                    </Button>
+                  </DialogActions>
+                </Dialog>
+
+                <IconButton
+                  aria-label="edit"
+                  onClick={(event) => handleClick(event, "profile")}
+                >
                   <EditIcon fontSize="small"></EditIcon>
                 </IconButton>
                 <Dialog
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="scroll-dialog-title"
-                  aria-describedby="scroll-dialog-description"
+                  open={openProfile}
+                  anchorEl={anchorEl.profile}
+                  onClose={() => handleClose("profile")}
+                  aria-labelledby="modal-profile"
+                  aria-describedby="modal-profile-desc"
                 >
                   <DialogTitle id="scroll-dialog-title">
                     Edit Profile
                   </DialogTitle>
                   <DialogContent>
                     <DialogContentText
-                      id="scroll-dialog-description"
+                      id="modal-profile-desc"
                       ref={descriptionElementRef}
                       tabIndex={-1}
                     >
@@ -365,11 +558,14 @@ const UserProfile = () => {
                     <Button
                       variant="outlined"
                       color="primary"
-                      onClick={handleClose}
+                      onClick={() => handleClose("profile")}
                     >
                       Cancel
                     </Button>
-                    <Button variant="contained" onClick={handleClose}>
+                    <Button
+                      variant="contained"
+                      onClick={() => handleClose("profile")}
+                    >
                       Update
                     </Button>
                   </DialogActions>

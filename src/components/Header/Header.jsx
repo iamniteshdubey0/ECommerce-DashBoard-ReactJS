@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import logo from "../../assets/images/Wow-shop-logo-bg.png";
-import { Button, Typography, Tooltip, Badge } from "@mui/material";
+import { Button, Typography, Tooltip} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import SearchBox from "../CustomComponenet/SearchBox/SearchBox";
