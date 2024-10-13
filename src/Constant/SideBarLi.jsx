@@ -28,7 +28,6 @@ const SIDEBAR_LIST = [
         id: "dashboard",
         label: "Dashboard",
         icon: <SpaceDashboardIcon />,
-        path: "/dashboard",
         subItems: [
           {
             id: "ecommerce",
@@ -47,23 +46,22 @@ const SIDEBAR_LIST = [
       },
 
       {
-        id: "product",
-        label: "Product",
+        id: "products",
+        label: "Products",
         icon: <InventoryIcon />,
-        path: "/product",
         subItems: [
           {
             id: "productList",
             label: "Product List",
             icon: <ShoppingCartIcon />,
-            path: "/productList",
+            path: "/product-list",
           },
           { id: "productView", label: "Product View", icon: <PreviewIcon /> },
           {
-            id: "productUpload",
-            label: "Product Upload",
+            id: "productAdd",
+            label: "Add Product",
             icon: <AddShoppingCartIcon />,
-            path: "/productUpload",
+            path: "/product-add",
           },
         ],
       },
