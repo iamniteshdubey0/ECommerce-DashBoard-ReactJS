@@ -16,6 +16,7 @@ import UserList from "./pages/main/Users/userList";
 import UserProfile from "./pages/main/Users/UserProfile";
 import ProductList from "./pages/main/Product/ProductList";
 import ProductAdd from "./pages/main/Product/ProductAdd";
+import InvoiceList from "./pages/main/Invoice/InvoiceList";
 
 function App() {
   const { isSidebarOpen } = useSidebar();
@@ -49,6 +50,7 @@ function App() {
                 <Route path="/user-profile" element={<UserProfile />} />
                 <Route path="/product-list" element={<ProductList />} />
                 <Route path="/product-add" element={<ProductAdd />} />
+                <Route path="/invoice-list" element={<InvoiceList />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </>
             ) : (

@@ -69,13 +69,12 @@ const SIDEBAR_LIST = [
         id: "invoice",
         label: "Invoice",
         icon: <ReceiptIcon />,
-        path: "/invoice",
         subItems: [
           {
             id: "inoviceList",
             label: "Invoice List",
             icon: <ReceiptLongIcon />,
-            path: "/inoviceList",
+            path: "/invoice-list",
           },
           {
             id: "invoiceDetails",
