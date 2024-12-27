@@ -80,7 +80,7 @@ const SIDEBAR_LIST = [
             id: "invoiceDetails",
             label: "Invoice Details",
             icon: <RequestQuoteIcon />,
-            path: "/invoiceDetails",
+            path: "/invoice-details",
           },
         ],
       },
