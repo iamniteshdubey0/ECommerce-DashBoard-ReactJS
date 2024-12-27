@@ -4,6 +4,8 @@ import { Box, Divider, Typography, useTheme } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import { tokens } from "../../../theme";
 import Grid from "@mui/material/Grid2";
+import SubTotal from "../../../components/CustomComponenet/DataTable/SubTotal";
+import InvoiceItemList from "../../../components/CustomComponenet/DataTable/InvoiceItemList";
 
 const InvoiceDetails = () => {
   const theme = useTheme();
@@ -126,38 +128,19 @@ const InvoiceDetails = () => {
               </Typography>
             </Grid>
           </Grid>
-          <Grid size={12}></Grid>
           <Grid size={12}>
-            <Grid size={3} sx={{ textAlign: "right" }}>
-              <Typography
-                variant="h5"
-                sx={{
-                  mb: 2,
-                }}
-              >
-                Shipping Address
-              </Typography>
-              <Typography
-                variant="h6"
-                color="text.secondary"
-                sx={{ textWrap: "wrap" }}
-              >
-                Office 25/B, Road 30, West jalkuri, Fatullah, Narayanganj 1265.
-              </Typography>
-              <Typography
-                variant="h6"
-                color="text.secondary"
-                sx={{ textWrap: "wrap" }}
-              >
-                +09090909090
-              </Typography>
-              <Typography
-                variant="h6"
-                color="text.secondary"
-                sx={{ textWrap: "wrap" }}
-              >
-                nonow@gmail.com
-              </Typography>
+            <InvoiceItemList></InvoiceItemList>
+          </Grid>
+          <Grid
+            container
+            size={12}
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Grid size={4}>
+              <SubTotal></SubTotal>
             </Grid>
           </Grid>
           <Grid size={12}>
