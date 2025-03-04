@@ -16,6 +16,7 @@ import UserList from "./pages/main/Users/userList";
 import UserProfile from "./pages/main/Users/UserProfile";
 import ProductList from "./pages/main/Product/ProductList";
 import ProductAdd from "./pages/main/Product/ProductAdd";
+import ProductView from "./pages/main/Product/ProductView";
 import InvoiceList from "./pages/main/Invoice/InvoiceList";
 import InvoiceDetails from "./pages/main/Invoice/InvoiceDetails";
 
@@ -51,6 +52,7 @@ function App() {
                 <Route path="/user-profile" element={<UserProfile />} />
                 <Route path="/product-list" element={<ProductList />} />
                 <Route path="/product-add" element={<ProductAdd />} />
+                <Route path="/product-view" element={<ProductView />} />
                 <Route path="/invoice-list" element={<InvoiceList />} />
                 <Route path="/invoice-details" element={<InvoiceDetails />} />
                 <Route path="*" element={<Navigate to="/" />} />

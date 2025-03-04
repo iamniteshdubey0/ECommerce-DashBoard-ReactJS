@@ -56,7 +56,12 @@ const SIDEBAR_LIST = [
             icon: <ShoppingCartIcon />,
             path: "/product-list",
           },
-          { id: "productView", label: "Product View", icon: <PreviewIcon /> },
+          {
+            id: "productView",
+            label: "Product View",
+            icon: <PreviewIcon />,
+            path: "/product-view",
+          },
           {
             id: "productAdd",
             label: "Add Product",

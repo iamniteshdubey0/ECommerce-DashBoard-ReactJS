@@ -454,7 +454,7 @@ const ProductAdd = () => {
                     style={{
                       display: "flex",
                       flexDirection: "column",
-                      justifyContent: "space-between",
+                      justifyContent: "space-around",
                       alignItems: "center",
                       height: "100%",
                     }}
@@ -466,7 +466,7 @@ const ProductAdd = () => {
                     />
                     <CollectionsIcon
                       sx={{
-                        fontSize: "100px",
+                        fontSize: "80px",
                         color: colors.whiteSmoke[600],
                       }}
                     ></CollectionsIcon>
