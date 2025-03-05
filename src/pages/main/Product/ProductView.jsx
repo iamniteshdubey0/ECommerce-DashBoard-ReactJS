@@ -13,6 +13,17 @@ const ProducView = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const proPics = [1, 2, 3, 4];
+  const proRating = [
+    { id: "5-Star", label: 5, rating: 200 },
+    { id: "4-Star", label: 4, rating: 160 },
+    { id: "3-Star", label: 3, rating: 110 },
+    { id: "2-Star", label: 2, rating: 80 },
+    { id: "1-Star", label: 1, rating: 15 },
+  ];
+
+  const totalRating= proRating.reduce((sum, rating) => sum + (rating.label * rating.rating), 0);
+  const totalReview = proRating.reduce((sum, rating) => sum + rating.rating, 0);
+  const averageRating = (totalRating / totalReview).toFixed(1);
   return (
     <Box
       component="section"
@@ -146,80 +157,39 @@ const ProducView = () => {
             sx={{ px: 3, justifyContent: "space-around" }}
           >
             <Grid size={6}>
-              <Box
-                gap={2}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  my: 1,
-                }}
-              >
-                <Typography variant="h4">5-Star</Typography>
-                <Rating name="5 Star" value={5} readOnly size="large" />
-                <Typography variant="h5">(500)</Typography>
-              </Box>
-
-              <Box
-                gap={2}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  my: 1,
-                }}
-              >
-                <Typography variant="h4">4-Star</Typography>
-                <Rating name="4 Star" value={4} readOnly size="large" />
-                <Typography variant="h5">(600)</Typography>
-              </Box>
-
-              <Box
-                gap={2}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  my: 1,
-                }}
-              >
-                <Typography variant="h4">3-Star</Typography>
-                <Rating name="3 Star" value={3} readOnly size="large" />
-                <Typography variant="h5">(211)</Typography>
-              </Box>
-
-              <Box
-                gap={2}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  my: 1,
-                }}
-              >
-                <Typography variant="h4">2-Star</Typography>
-                <Rating name="2 Star" value={2} readOnly size="large" />
-                <Typography variant="h5">(160)</Typography>
-              </Box>
-
-              <Box
-                gap={2}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  my: 1,
-                }}
-              >
-                <Typography variant="h4">1-Star</Typography>
-                <Rating name="1 Star" value={1} readOnly size="large" />
-                <Typography variant="h5">(100)</Typography>
-              </Box>
+              {proRating.map((rating) => {
+                return (
+                  <Box
+                    key={rating.id}
+                    gap={2}
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      my: 1,
+                    }}
+                  >
+                    <Typography variant="h4">{rating.id}</Typography>
+                    <Rating
+                      name="{rating.id}"
+                      value={rating.label}
+                      readOnly
+                      size="large"
+                    />
+                    <Typography variant="h5">({rating.rating})</Typography>
+                  </Box>
+                );
+              })}
             </Grid>
-            <Grid size={6} sx={{ my: 1, justifyContent: "center", alignItems:'center' }}>
-              <Typography variant="h5">Total Review (38)</Typography>
-              <Typography sx={{ fontSize: "60px" }}>4.5</Typography>
-              <Rating name="4.5 Star" value={4.5} readOnly size="medium" />
+            <Grid
+              size={6}
+              sx={{ my: 1, justifyContent: "center", alignItems: "center" }}
+            >
+              <Typography variant="h5">Total Review ({totalReview})</Typography>
+              <Typography sx={{ fontSize: "60px" }}>
+                {averageRating}
+              </Typography>
+              <Rating name={`$(averageRating) + "Star`} value={averageRating} readOnly size="medium" />
               <Typography variant="h5">Your Average Rating Star</Typography>
             </Grid>
           </Grid>
