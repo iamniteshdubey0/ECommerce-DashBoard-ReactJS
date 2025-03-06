@@ -1,6 +1,6 @@
 import React from "react";
 import BreadcrumCustom from "../../../components/CustomComponenet/BreadcrumCustom/BreadcrumCustom";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, TextField, Button } from "@mui/material";
 import Footer from "../../../components/Footer/Footer";
 import Grid from "@mui/material/Grid2";
 import { useTheme } from "@mui/material";
@@ -8,6 +8,8 @@ import { tokens } from "../../../theme";
 import Divider from "@mui/material/Divider";
 import Chip from "@mui/material/Chip";
 import Rating from "@mui/material/Rating";
+import CommentBox from "../../../components/CustomComponenet/CommentBox/CommentBox";
+import ProductTree from "../../../components/CustomComponenet/ProductTree/ProductTree";
 
 const ProducView = () => {
   const theme = useTheme();
@@ -118,16 +120,14 @@ const ProducView = () => {
               jacket
             </Typography>
           </Grid>
-          <Grid container size={12} sx={{ p: 3 }}>
-            <Grid size={2}>
-              <Typography variant="h6">brand</Typography>
-            </Grid>
-            <Grid size={1}>
-              <Typography variant="subtitle2">:</Typography>{" "}
-            </Grid>
-            <Grid size={9}>
-              <Typography variant="subtitle2">brand</Typography>
-            </Grid>
+
+          <Grid size={12} sx={{ p: 3 }}>
+            <ProductTree itemKey={'Brand'} itemValue={'Gucci Parada'}></ProductTree>
+            <ProductTree itemKey={'category'} itemValue={`Men's`}></ProductTree>
+            <ProductTree itemKey={'stock'} itemValue={`6990`}></ProductTree>
+            <ProductTree itemKey={'Brand'} itemValue={'Gucci Parada'}></ProductTree>
+            <ProductTree itemKey={'category'} itemValue={`Men's`}></ProductTree>
+            <ProductTree itemKey={'stock'} itemValue={`6990`}></ProductTree>
           </Grid>
         </Grid>
 
@@ -212,7 +212,7 @@ const ProducView = () => {
               backgroundColor:
                 theme.palette.mode === "light"
                   ? colors.whiteSmoke[400]
-                  : colors.oxfordBlue[600],
+                  : colors.oxfordBlue[400],
               minHeight: "400px",
               width: "100%",
               borderRadius: 2,
@@ -220,46 +220,39 @@ const ProducView = () => {
             })}
           >
             <Grid
-              container
-              sx={(theme) => ({
-                backgroundColor:
-                  theme.palette.mode === "light"
-                    ? colors.whiteSmoke[100]
-                    : colors.oxfordBlue[400],
-                minHeight: "120px",
-                width: "100%",
-                borderRadius: 2,
-                border: `1px solid ${colors.primary[500]}`,
-              })}
+              size={12}
+              sx={{ mb: 3, height: "400px", overflowY: "scroll" }}
             >
-              <Grid container size={12} sx={{ px: 2, py: 2 }}>
-                <Grid size={6}>
-                  <Typography variant="h6">Username</Typography>
-                </Grid>
-                <Grid size={6} sx={{ textAlign: "end" }}>
-                  <Button sx={{ mx: 1 }} variant="contained" size="small">
-                    Relpy
-                  </Button>
-                  <Button
-                    sx={{ mx: 1, color: colors.error[500] }}
-                    variant="outlined"
-                    size="small"
-                  >
-                    Delete
-                  </Button>
-                </Grid>
-              </Grid>
-              <Grid size={12} sx={{ px: 2, py: 1, mt: -2 }}>
-                <Typography variant="body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Mollitia quibusdam ipsum iste quo corporis sequi at eaque
-                  autem repudiandae est voluptatibus tempore rerum a, odit eos?
-                  Enim officiis voluptatem quisquam.
-                </Typography>
-              </Grid>
-              <Grid size={12} sx={{ px: 2, py: 1, mt: -2, textAlign: "end" }}>
-                <Typography variant="caption">Lorem ipsum</Typography>
-              </Grid>
+              <CommentBox
+                username={"Nitesh Dubey"}
+                comment={"Good Product"}
+                date={"22-01-2025"}
+              ></CommentBox>
+              <CommentBox
+                username={"Nitesh Dubey"}
+                comment={"Good Product"}
+                date={"22-01-2025"}
+              ></CommentBox>
+              <CommentBox
+                username={"Nitesh Dubey"}
+                comment={"Good Product"}
+                date={"22-01-2025"}
+              ></CommentBox>
+            </Grid>
+
+            <Grid size={12}>
+              <TextField
+                fullWidth
+                id="productDescription"
+                label="Description"
+                multiline
+                rows={5}
+              />
+            </Grid>
+            <Grid size={12} sx={{ mt: 3 }}>
+              <Button variant="contained" fullWidth color="primary">
+                Drop Your Reply
+              </Button>
             </Grid>
           </Box>
         </Grid>
