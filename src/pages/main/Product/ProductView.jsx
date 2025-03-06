@@ -1,6 +1,6 @@
 import React from "react";
 import BreadcrumCustom from "../../../components/CustomComponenet/BreadcrumCustom/BreadcrumCustom";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import Footer from "../../../components/Footer/Footer";
 import Grid from "@mui/material/Grid2";
 import { useTheme } from "@mui/material";
@@ -21,7 +21,10 @@ const ProducView = () => {
     { id: "1-Star", label: 1, rating: 15 },
   ];
 
-  const totalRating= proRating.reduce((sum, rating) => sum + (rating.label * rating.rating), 0);
+  const totalRating = proRating.reduce(
+    (sum, rating) => sum + rating.label * rating.rating,
+    0
+  );
   const totalReview = proRating.reduce((sum, rating) => sum + rating.rating, 0);
   const averageRating = (totalRating / totalReview).toFixed(1);
   return (
@@ -127,6 +130,7 @@ const ProducView = () => {
             </Grid>
           </Grid>
         </Grid>
+
         <Grid size={12} sx={{ p: 1, mt: 2 }}>
           <Divider textAlign="left" sx={{ mb: 2 }}>
             <Chip color="teal" label="Product Description" size="small" />
@@ -186,13 +190,78 @@ const ProducView = () => {
               sx={{ my: 1, justifyContent: "center", alignItems: "center" }}
             >
               <Typography variant="h5">Total Review ({totalReview})</Typography>
-              <Typography sx={{ fontSize: "60px" }}>
-                {averageRating}
-              </Typography>
-              <Rating name={`$(averageRating) + "Star`} value={averageRating} readOnly size="medium" />
+              <Typography sx={{ fontSize: "60px" }}>{averageRating}</Typography>
+              <Rating
+                name={`$(averageRating) + "Star`}
+                value={averageRating}
+                readOnly
+                size="medium"
+              />
               <Typography variant="h5">Your Average Rating Star</Typography>
             </Grid>
           </Grid>
+        </Grid>
+
+        <Grid size={12} sx={{ p: 1, mt: 2 }}>
+          <Divider textAlign="left" sx={{ mb: 2 }}>
+            <Chip color="teal" label="Customer Review" size="small" />
+          </Divider>
+
+          <Box
+            sx={(theme) => ({
+              backgroundColor:
+                theme.palette.mode === "light"
+                  ? colors.whiteSmoke[400]
+                  : colors.oxfordBlue[600],
+              minHeight: "400px",
+              width: "100%",
+              borderRadius: 2,
+              p: 2,
+            })}
+          >
+            <Grid
+              container
+              sx={(theme) => ({
+                backgroundColor:
+                  theme.palette.mode === "light"
+                    ? colors.whiteSmoke[100]
+                    : colors.oxfordBlue[400],
+                minHeight: "120px",
+                width: "100%",
+                borderRadius: 2,
+                border: `1px solid ${colors.primary[500]}`,
+              })}
+            >
+              <Grid container size={12} sx={{ px: 2, py: 2 }}>
+                <Grid size={6}>
+                  <Typography variant="h6">Username</Typography>
+                </Grid>
+                <Grid size={6} sx={{ textAlign: "end" }}>
+                  <Button sx={{ mx: 1 }} variant="contained" size="small">
+                    Relpy
+                  </Button>
+                  <Button
+                    sx={{ mx: 1, color: colors.error[500] }}
+                    variant="outlined"
+                    size="small"
+                  >
+                    Delete
+                  </Button>
+                </Grid>
+              </Grid>
+              <Grid size={12} sx={{ px: 2, py: 1, mt: -2 }}>
+                <Typography variant="body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Mollitia quibusdam ipsum iste quo corporis sequi at eaque
+                  autem repudiandae est voluptatibus tempore rerum a, odit eos?
+                  Enim officiis voluptatem quisquam.
+                </Typography>
+              </Grid>
+              <Grid size={12} sx={{ px: 2, py: 1, mt: -2, textAlign: "end" }}>
+                <Typography variant="caption">Lorem ipsum</Typography>
+              </Grid>
+            </Grid>
+          </Box>
         </Grid>
       </Grid>
 
