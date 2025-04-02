@@ -19,6 +19,7 @@ import ProductAdd from "./pages/main/Product/ProductAdd";
 import ProductView from "./pages/main/Product/ProductView";
 import InvoiceList from "./pages/main/Invoice/InvoiceList";
 import InvoiceDetails from "./pages/main/Invoice/InvoiceDetails";
+import Message from "./pages/main/Message/Message";
 
 function App() {
   const { isSidebarOpen } = useSidebar();
@@ -55,6 +56,7 @@ function App() {
                 <Route path="/product-view" element={<ProductView />} />
                 <Route path="/invoice-list" element={<InvoiceList />} />
                 <Route path="/invoice-details" element={<InvoiceDetails />} />
+                <Route path="/messages" element={<Message />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </>
             ) : (
