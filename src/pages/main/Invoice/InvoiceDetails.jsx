@@ -14,11 +14,11 @@ const InvoiceDetails = () => {
     <Box
       component="section"
       sx={(theme) => ({
-        p: 2,
+        p: { xs: 0.5, md: 2 },
         overflowY: "auto",
         maxHeight: "88vh",
         "&::-webkit-scrollbar": {
-          width: "3px",
+          width: { xs: "0px", md: "3px" },
         },
         "&::-webkit-scrollbar-thumb": {
           backgroundColor: theme.palette.primary.main,
@@ -40,7 +40,7 @@ const InvoiceDetails = () => {
       <Paper
         elevation={0}
         sx={(theme) => ({
-          mt: 3,
+          mt: {xs:2, md:3},
           p: 1,
           width: "100%",
           minHeight: "160px",
@@ -64,14 +64,13 @@ const InvoiceDetails = () => {
             size={12}
             sx={{ display: "flex", justifyContent: "space-between", p: 1 }}
           >
-            <Grid size={3}>
+            <Grid size={{ xs: 12, md: 3 }}>
               <Typography
                 sx={{
                   mb: 2,
                 }}
                 variant="h5"
               >
-                {" "}
                 Billing Address
               </Typography>
               <Typography
@@ -96,7 +95,7 @@ const InvoiceDetails = () => {
                 nonow@gmail.com
               </Typography>
             </Grid>
-            <Grid size={3} sx={{ textAlign: "right" }}>
+            <Grid size={{ xs: 12, md: 3 }} sx={{ textAlign: "right" }}>
               <Typography
                 variant="h5"
                 sx={{
@@ -139,7 +138,7 @@ const InvoiceDetails = () => {
               justifyContent: "flex-end",
             }}
           >
-            <Grid size={4}>
+            <Grid size={{ xs: 8, md: 4 }}>
               <SubTotal></SubTotal>
             </Grid>
           </Grid>

@@ -32,14 +32,14 @@ function App() {
       <Grid container spacing={2} columnGap={0} sx={{ overflow: "hidden" }}>
         {isUserLogged && (
           <Grid
-            size={isSidebarOpen ? 2.5 : 1}
-            sx={{ transition: "all 0.3s ease-in-out" }}
+            size={{xs:isSidebarOpen ? 8 : 0, md:isSidebarOpen ? 2.5 : 1}}
+            sx={{ transition: "all 0.3s ease-in-out", position:{xs:'absolute', md:'inherit'}, zIndex:999, height:{xs:'100vh'} }}
           >
             <SideBar></SideBar>
           </Grid>
         )}
         <Grid
-          size={isUserLogged ? (isSidebarOpen ? 9.5 : 11) : 12}
+          size={{xs:isUserLogged ? (isSidebarOpen ? 12 : 12) : 12, md:isUserLogged ? (isSidebarOpen ? 9.5 : 11) : 12}}
           sx={{ borderRadius: 2, transition: "all 0.3s ease-in-out" }}
         >
           <Routes>

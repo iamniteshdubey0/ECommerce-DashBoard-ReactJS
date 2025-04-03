@@ -17,7 +17,7 @@ const SearchBox = () => {
         p: "2px 4px",
         display: "flex",
         alignItems: "center",
-        width: 300,
+        width: {xs:0, md:300},
         backgroundColor:
           theme.palette.mode === "light"
             ? colors.whiteSmoke[200]
@@ -26,6 +26,7 @@ const SearchBox = () => {
     >
       <InputBase
         sx={{
+          display:{xs:'none'},
           ml: 1,
           flex: 1,
           "& .MuiInputBase-input": {

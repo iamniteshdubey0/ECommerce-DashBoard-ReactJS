@@ -5,13 +5,12 @@ import Grid from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import logo from "../../assets/images/Wow-shop-logo-bg.png";
-import { Button, Typography, Tooltip} from "@mui/material";
+import { Button, Typography, Tooltip } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import SearchBox from "../CustomComponenet/SearchBox/SearchBox";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LanguageIcon from "@mui/icons-material/Language";
 import EmailIcon from "@mui/icons-material/Email";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -85,7 +84,10 @@ const Header = () => {
               ></Box>
               <Typography
                 variant="h3"
-                sx={{ color: theme.palette.primary.main }}
+                sx={{
+                  color: theme.palette.primary.main,
+                  display: { xs: "none", md: "block" },
+                }}
               >
                 Wow-shop
               </Typography>
@@ -93,11 +95,11 @@ const Header = () => {
           </Link>
         </Grid>
         <Grid
-          size={{ xs: 4 }}
+          size={{ xs: 6, md:4 }}
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "flex-start",
+            justifyContent: {xs:'flex-end', md:'flex-start'},
           }}
         >
           <IconBtn onClick={toggleSidebar}>
@@ -112,7 +114,7 @@ const Header = () => {
           <SearchBox></SearchBox>
         </Grid>
         <Grid
-          size={{ xs: 6 }}
+          size={{ xs: 4, md:6 }}
           sx={{
             display: "flex",
             alignItems: "center",
@@ -138,6 +140,7 @@ const Header = () => {
             aria-haspopup="true"
             aria-expanded={openCart ? "true" : undefined}
             onClick={(event) => handleClick(event, "cart")}
+            sx={{ display: { xs: "none", md: "block" } }}
           >
             <BadgeCustom badgeContent={6} color="secondary">
               <Tooltip title="Orders">
@@ -159,6 +162,7 @@ const Header = () => {
             aria-haspopup="true"
             aria-expanded={openMessage ? "true" : undefined}
             onClick={(event) => handleClick(event, "message")}
+            sx={{ display: { xs: "none", md: "block" } }}
           >
             <BadgeCustom badgeContent={12} color="secondary">
               <Tooltip title="Messages">
@@ -180,6 +184,7 @@ const Header = () => {
             aria-haspopup="true"
             aria-expanded={openNotification ? "true" : undefined}
             onClick={(event) => handleClick(event, "notification")}
+            sx={{ display: { xs: "none", md: "block" } }}
           >
             <BadgeCustom badgeContent={10} color="secondary">
               <Tooltip title="Notifications">
@@ -223,6 +228,7 @@ const Header = () => {
               component="div"
               sx={{
                 textAlign: "left",
+                display: { xs: "none", md: "block" },
               }}
             >
               <Typography

@@ -13,11 +13,11 @@ const ProductList = () => {
     <Box
       component="section"
       sx={(theme) => ({
-        p: 2,
+        p: { xs: 0.5, md: 2 },
         overflowY: "auto",
         maxHeight: "88vh",
         "&::-webkit-scrollbar": {
-          width: "3px",
+          width: { xs: "0px", md: "3px" },
         },
         "&::-webkit-scrollbar-thumb": {
           backgroundColor: theme.palette.primary.main,
@@ -36,11 +36,11 @@ const ProductList = () => {
         text="Home"
         textlink="/"
       ></BreadcrumCustom>
-      <Grid container spacing={2} sx={{ mt: 4 }}>
+      <Grid container spacing={2} sx={{ mt: { xs: 2, md: 4 } }}>
         <Grid container size={12}>
           {PRODUCTS_LIST.map((item) => {
             return (
-              <Grid size={4} sx={{ p: 1 }}>
+              <Grid size={{ xs: 12, md: 4 }} sx={{ p: 1 }}>
                 <MiniCard
                   color={item.color}
                   label={item.label}

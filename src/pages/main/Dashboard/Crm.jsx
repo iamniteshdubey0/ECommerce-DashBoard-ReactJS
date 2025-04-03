@@ -15,11 +15,11 @@ const Crm = () => {
     <Box
       component="section"
       sx={(theme) => ({
-        p: 2,
+        p: { xs: 0.5, md: 2 },
         overflowY: "auto",
         maxHeight: "88vh",
         "&::-webkit-scrollbar": {
-          width: "3px",
+          width: { xs: "0px", md: "3px" },
         },
         "&::-webkit-scrollbar-thumb": {
           backgroundColor: theme.palette.primary.main,
@@ -38,29 +38,29 @@ const Crm = () => {
         text="Home"
         textlink="/dashboard"
       ></BreadcrumCustom>
-      <Grid container spacing={1} sx={{ mt: 4 }}>
-        <Grid size={6} sx={{ p: 1 }}>
+      <Grid container spacing={1} sx={{ mt: { xs: 2, md: 4 } }}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ p: 1 }}>
           <CardBarChart
             color={"primary"}
             heading={"campaign sent"}
             value={"15458K"}
           ></CardBarChart>
         </Grid>
-        <Grid size={6} sx={{ p: 1 }}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ p: 1 }}>
           <CardBarChart
             color={"secondary"}
             heading={"engagements"}
             value={"12458.74K"}
           ></CardBarChart>
         </Grid>
-        <Grid size={6} sx={{ p: 1 }}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ p: 1 }}>
           <CardBarChart
             color={"success"}
             heading={"conversions"}
             value={"10458.74K"}
           ></CardBarChart>
         </Grid>
-        <Grid size={6} sx={{ p: 1 }}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ p: 1 }}>
           <CardBarChart
             color={"error"}
             value={"9458.74K"}
@@ -68,19 +68,19 @@ const Crm = () => {
           ></CardBarChart>
         </Grid>
       </Grid>
-      <Grid container spacing={2} sx={{ mt: 4 }}>
-        <Grid size={7} sx={{ p: 1 }}>
+      <Grid container spacing={2} sx={{ mt: { xs: 2, md: 4 } }}>
+        <Grid size={{ xs: 12, md: 7 }} sx={{ p: 1 }}>
           <StackedBarChart></StackedBarChart>
         </Grid>
-        <Grid size={5} sx={{ p: 1 }}>
-        <PageViews />
-        </Grid>
-      </Grid>
-      <Grid container spacing={2} sx={{ mt: 4 }}>
-        <Grid size={6} sx={{ p: 1 }}>
+        <Grid size={{ xs: 12, md: 5 }} sx={{ p: 1 }}>
           <PageViews />
         </Grid>
-        <Grid size={6} sx={{ p: 1 }}>
+      </Grid>
+      <Grid container spacing={2} sx={{ mt: { xs: 2, md: 4 } }}>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ p: 1 }}>
+          <PageViews />
+        </Grid>
+        <Grid size={{ xs: 12, md: 6 }} sx={{ p: 1 }}>
           <CustomTimeline />
         </Grid>
       </Grid>

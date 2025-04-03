@@ -33,11 +33,11 @@ const ProducView = () => {
     <Box
       component="section"
       sx={(theme) => ({
-        p: 2,
+        p: { xs: 0.5, md: 2 },
         overflowY: "auto",
         maxHeight: "88vh",
         "&::-webkit-scrollbar": {
-          width: "3px",
+          width: { xs: "0px", md: "3px" },
         },
         "&::-webkit-scrollbar-thumb": {
           backgroundColor: theme.palette.primary.main,
@@ -61,7 +61,7 @@ const ProducView = () => {
         container
         size={12}
         sx={(theme) => ({
-          mt: 5,
+          mt: {xs:2, md:5},
           p: 3,
           borderRadius: 2,
           maxHeight: "fit-content",
@@ -72,7 +72,7 @@ const ProducView = () => {
               : colors.oxfordBlue[300],
         })}
       >
-        <Grid size={4} sx={{ p: 1 }}>
+        <Grid size={{ xs: 12, md: 4 }} sx={{ p: 1 }}>
           <Divider textAlign="left" sx={{ mb: 2 }}>
             <Chip color="teal" label="Product Gallery" size="small" />
           </Divider>
@@ -94,7 +94,7 @@ const ProducView = () => {
             sx={{ mt: 2, justifyContent: "space-between" }}
           >
             {proPics.map((item) => (
-              <Grid size={4}>
+              <Grid size={{ xs: 12, md: 4 }}>
                 <Box
                   sx={{
                     height: "60px",
@@ -109,7 +109,7 @@ const ProducView = () => {
           </Grid>
         </Grid>
 
-        <Grid size={8} sx={{ p: 1 }}>
+        <Grid size={{ xs: 12, md: 8  }} sx={{ p: 1 }}>
           <Divider textAlign="left" sx={{ mb: 2 }}>
             <Chip color="teal" label="Product Details" size="small" />
           </Divider>

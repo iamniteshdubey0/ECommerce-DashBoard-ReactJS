@@ -29,10 +29,29 @@ const BreadcrumCustom = ({ textlink, text, title, sText }) => {
             : colors.oxfordBlue[300],
       })}
     >
-      <Grid size={8}>
-        <Typography variant="h4" sx={{ color: "text.primary" }}>{title}</Typography>
+      <Grid
+        size={{ xs: 12, sm: 12, md: 8 }}
+        sx={{
+          textAlign: {
+            xs: "center",
+            md:'left'
+          },
+        }}
+      >
+        <Typography variant="h4" sx={{ color: "text.primary", fontWeight:600 }}>
+          {title}
+        </Typography>
       </Grid>
-      <Grid size={4} sx={{ display: "flex", justifyContent: "flex-end" }}>
+      <Grid
+        size={{xs:12, sm: 12, md: 4 }}
+        sx={{
+          display: "flex",
+          justifyContent: {
+            xs:'center',
+            md:'flex-end'
+          },
+        }}
+      >
         <Breadcrumbs aria-label="breadcrumb">
           <Link
             to={textlink}

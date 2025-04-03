@@ -21,11 +21,11 @@ const ProductAdd = () => {
     <Box
       component="section"
       sx={(theme) => ({
-        p: 2,
+        p: { xs: 0.5, md: 2 },
         overflowY: "auto",
         maxHeight: "88vh",
         "&::-webkit-scrollbar": {
-          width: "3px",
+          width: { xs: "0px", md: "3px" },
         },
         "&::-webkit-scrollbar-thumb": {
           backgroundColor: theme.palette.primary.main,
@@ -44,10 +44,10 @@ const ProductAdd = () => {
         text="Home"
         textlink="/"
       ></BreadcrumCustom>
-      <Grid container spacing={2} sx={{ mt: 4 }}>
+      <Grid container spacing={2} sx={{ mt: { xs: 2, md: 4 } }}>
         <Grid
           container
-          size={7}
+          size={{ xs: 12, md: 7 }}
           sx={(theme) => ({
             p: 2,
             borderRadius: 2,
@@ -192,7 +192,7 @@ const ProductAdd = () => {
           </Grid>
         </Grid>
 
-        <Grid container size={5}>
+        <Grid container size={{ xs: 12, md: 5 }}>
           <Grid
             container
             size={12}
@@ -417,7 +417,7 @@ const ProductAdd = () => {
             p: 1,
             display: "flex",
             justifyContent: "space-between",
-            flexWrap: "nowrap",
+            flexWrap: {xs:'wrap', md:'nowarp'},
             overflowX: "auto",
             scrollbarWidth: "thin", // For Firefox
             "&::-webkit-scrollbar": {
@@ -435,8 +435,8 @@ const ProductAdd = () => {
                   p: 1,
                   borderRadius: 2,
                   border: "1px dashed gray",
-                  height: "165px",
-                  width: "165px",
+                  height: "160px",
+                  width: "160px",
                   backgroundColor:
                     theme.palette.mode === "light"
                       ? colors.whiteSmoke[200]

@@ -13,11 +13,11 @@ const Analytics = () => {
     <Box
       component="section"
       sx={(theme) => ({
-        p: 2,
-        overflowY: "auto",
+        p: {xs:0.5, md:2},
+        overflowY: 'auto',
         maxHeight: "88vh",
         "&::-webkit-scrollbar": {
-          width: "3px",
+          width: {xs:'0px', md:'3px'},
         },
         "&::-webkit-scrollbar-thumb": {
           backgroundColor: theme.palette.primary.main,
@@ -37,28 +37,28 @@ const Analytics = () => {
         textlink="/dashboard"
       ></BreadcrumCustom>
       <Grid container spacing={1} sx={{ mt: 4 }}>
-        <Grid size={3} sx={{ p: 1 }}>
+        <Grid size={{xs:12, md:3}} sx={{ p: 1 }}>
           <CardLineChart
             color={"error"}
             heading={"impressions"}
             value={"15458K"}
           ></CardLineChart>
         </Grid>
-        <Grid size={3} sx={{ p: 1 }}>
+        <Grid size={{xs:12, md:3}} sx={{ p: 1 }}>
           <CardLineChart
             color={"secondary"}
             heading={"engagements"}
             value={"12458.74K"}
           ></CardLineChart>
         </Grid>
-        <Grid size={3} sx={{ p: 1 }}>
+        <Grid size={{xs:12, md:3}} sx={{ p: 1 }}>
           <CardLineChart
             color={"success"}
             heading={"conversions"}
             value={"10458.74K"}
           ></CardLineChart>
         </Grid>
-        <Grid size={3} sx={{ p: 1 }}>
+        <Grid size={{xs:12, md:3}} sx={{ p: 1 }}>
           <CardLineChart
             color={"primary"}
             value={"9458.74K"}
@@ -67,18 +67,18 @@ const Analytics = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 4 }}>
-        <Grid size={7} sx={{ p: 1 }}>
+        <Grid size={{xs:12, md:7}} sx={{ p: 1 }}>
           <StackedBarChart></StackedBarChart>
         </Grid>
-        <Grid size={5} sx={{ p: 1 }}>
+        <Grid size={{xs:12, md:5}} sx={{ p: 1 }}>
           <PageViews />
         </Grid>
       </Grid>
       <Grid container spacing={2} sx={{ mt: 4 }}>
-        <Grid size={6} sx={{ p: 1 }}>
+        <Grid size={{xs:12, md:6}} sx={{ p: 1 }}>
           <PageViews />
         </Grid>
-        <Grid size={6} sx={{ p: 1 }}>
+        <Grid size={{xs:12, md:6}} sx={{ p: 1 }}>
           <CustomTimeline />
         </Grid>
       </Grid>
