@@ -20,6 +20,7 @@ import ProductView from "./pages/main/Product/ProductView";
 import InvoiceList from "./pages/main/Invoice/InvoiceList";
 import InvoiceDetails from "./pages/main/Invoice/InvoiceDetails";
 import Message from "./pages/main/Message/Message";
+import ButtonUi from "./pages/ui/Buttons/ButtonUi";
 
 function App() {
   const { isSidebarOpen } = useSidebar();
@@ -57,6 +58,7 @@ function App() {
                 <Route path="/invoice-list" element={<InvoiceList />} />
                 <Route path="/invoice-details" element={<InvoiceDetails />} />
                 <Route path="/messages" element={<Message />} />
+                <Route path="/button-ui" element={<ButtonUi />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </>
             ) : (
