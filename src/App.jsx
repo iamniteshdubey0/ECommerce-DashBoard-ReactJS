@@ -12,7 +12,7 @@ import Signup from "./pages/auth/Signup";
 import PasswordReset from "./pages/auth/PasswordReset";
 import Analytics from "./pages/main/Dashboard/Analytics";
 import Crm from "./pages/main/Dashboard/Crm";
-import UserList from "./pages/main/Users/userList";
+import UserList from "./pages/main/Users/UserList";
 import UserProfile from "./pages/main/Users/UserProfile";
 import ProductList from "./pages/main/Product/ProductList";
 import ProductAdd from "./pages/main/Product/ProductAdd";
