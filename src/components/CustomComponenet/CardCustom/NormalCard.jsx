@@ -16,7 +16,7 @@ const CardCustom = ({ color, heading }) => {
         width: "100%",
         maxHeight: "165px",
         minHeight: "130px",
-        backgroundImage: `linear-gradient(to right, ${theme.palette[color].main}, ${theme.palette[color].dark})`,
+        backgroundImage: `linear-gradient(to right, ${theme.palette[color].main}, ${theme.palette[color].light})`,
         borderRadius: 2,
         color: "white",
       })}
@@ -29,7 +29,7 @@ const CardCustom = ({ color, heading }) => {
             last month
             </Typography>
           </Grid>
-          <Grid size={4} sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <Grid size={4} sx={{ display: "flex", justifyContent: "flex-end", pr:0.5 }}>
             <IconButton edge="end" aria-label="delete">
               <MoreVertIcon fontSize="small" />
             </IconButton>

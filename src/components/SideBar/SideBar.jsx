@@ -37,8 +37,10 @@ const SideBar = () => {
       sx={{
         borderRadius: 2,
         mt: 0.5,
+        height:{xs:'100%'},
         maxHeight: "87vh",
         overflowY: "auto",
+        overflowX:"hidden",
         p: "0px 5px ",
         backgroundColor:
           theme.palette.mode === "light"
@@ -49,7 +51,7 @@ const SideBar = () => {
         alignItems: isSidebarOpen ? "flex-start" : "center",
         transition: "width 0.3s ease-in-out",
         "&::-webkit-scrollbar": {
-          width: "3px",
+          width: { xs: "0px", md: "3px" },
         },
         "&::-webkit-scrollbar-thumb": {
           backgroundColor: theme.palette.primary.main,
@@ -173,6 +175,7 @@ const SideBar = () => {
                           }}
                         >
                           <ListItemButton
+                            selected={linkActive === subItem.id}
                             key={subItem.id}
                             sx={{
                               borderRadius: 2,

@@ -12,7 +12,7 @@ const useProfileMenuItems = () => {
       id: "myAccount",
       label: "My Account",
       icon: <PersonAdd />,
-      // Add a click handler if needed
+      path: "/user-profile"
     },
     {
       id: "resetPassword",

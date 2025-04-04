@@ -20,7 +20,7 @@ const data = [
   {
     label: "Invested",
     icon: (
-      <ShopTwoTwoToneIcon sx={{ fontSize: "50px", mr: 2, color: "#ef476f" }} />
+      <ShopTwoTwoToneIcon sx={{ fontSize: "40px", mr: 2, color: "#ef476f" }} />
     ),
     color: "#ef476f",
     barData: [1000, 1500, 800, 1180, 1230, 2390, 1690],
@@ -29,7 +29,7 @@ const data = [
     label: "Earning",
     icon: (
       <BookmarksTwoToneIcon
-        sx={{ fontSize: "50px", mr: 2, color: "#00C49F" }}
+        sx={{ fontSize: "40px", mr: 2, color: "#00C49F" }}
       />
     ),
     color: "#00C49F",
@@ -39,7 +39,7 @@ const data = [
     label: "Expeneses",
     icon: (
       <FilterNoneTwoToneIcon
-        sx={{ fontSize: "50px", mr: 2, color: "#FF8042" }}
+        sx={{ fontSize: "40px", mr: 2, color: "#FF8042" }}
       />
     ),
     color: "#FF8042",

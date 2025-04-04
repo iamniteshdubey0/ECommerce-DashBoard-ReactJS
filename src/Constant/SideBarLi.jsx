@@ -1,9 +1,6 @@
 import React from "react";
 import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import PeopleIcon from "@mui/icons-material/People";
-import RecentActorsIcon from "@mui/icons-material/RecentActors";
-import BadgeIcon from "@mui/icons-material/Badge";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import DataThresholdingIcon from "@mui/icons-material/DataThresholding";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import AddchartIcon from "@mui/icons-material/Addchart";
@@ -31,7 +28,6 @@ const SIDEBAR_LIST = [
         id: "dashboard",
         label: "Dashboard",
         icon: <SpaceDashboardIcon />,
-        path: "/dashboard",
         subItems: [
           {
             id: "ecommerce",
@@ -43,55 +39,34 @@ const SIDEBAR_LIST = [
             id: "anyltics",
             label: "Anyltics",
             icon: <DataThresholdingIcon />,
-            path: "/dashboard",
+            path: "/analytics",
           },
           { id: "crm", label: "Crm", icon: <AddchartIcon />, path: "/crm" },
         ],
       },
+
       {
-        id: "users",
-        label: "Users",
-        icon: <PeopleIcon />,
-        path: "/users",
-        subItems: [
-          {
-            id: "userList",
-            label: "User List",
-            icon: <RecentActorsIcon />,
-            path: "/userList",
-          },
-          {
-            id: "userProfile",
-            label: "User Profile",
-            icon: <BadgeIcon />,
-            path: "/userProfile",
-          },
-          {
-            id: "myProfile",
-            label: "My Profile",
-            icon: <AdminPanelSettingsIcon />,
-            path: "/myProfile",
-          },
-        ],
-      },
-      {
-        id: "product",
-        label: "Product",
+        id: "products",
+        label: "Products",
         icon: <InventoryIcon />,
-        path: "/product",
         subItems: [
           {
             id: "productList",
             label: "Product List",
             icon: <ShoppingCartIcon />,
-            path: "/productList",
+            path: "/product-list",
           },
-          { id: "productView", label: "Product View", icon: <PreviewIcon /> },
           {
-            id: "productUpload",
-            label: "Product Upload",
+            id: "productView",
+            label: "Product View",
+            icon: <PreviewIcon />,
+            path: "/product-view",
+          },
+          {
+            id: "productAdd",
+            label: "Add Product",
             icon: <AddShoppingCartIcon />,
-            path: "/productUpload",
+            path: "/product-add",
           },
         ],
       },
@@ -99,21 +74,27 @@ const SIDEBAR_LIST = [
         id: "invoice",
         label: "Invoice",
         icon: <ReceiptIcon />,
-        path: "/invoice",
         subItems: [
           {
             id: "inoviceList",
             label: "Invoice List",
             icon: <ReceiptLongIcon />,
-            path: "/inoviceList",
+            path: "/invoice-list",
           },
           {
             id: "invoiceDetails",
             label: "Invoice Details",
             icon: <RequestQuoteIcon />,
-            path: "/invoiceDetails",
+            path: "/invoice-details",
           },
         ],
+      },
+      {
+        id: "users",
+        label: "Users",
+        icon: <PeopleIcon />,
+        path: "/user-list",
+        subItems: [],
       },
       {
         id: "orders",
@@ -128,20 +109,6 @@ const SIDEBAR_LIST = [
         icon: <EmailIcon />,
         subItems: [],
         path: "/messages",
-      },
-      {
-        id: "notifications",
-        label: "Notification",
-        icon: <NotificationsIcon />,
-        subItems: [],
-        path: "/notifications",
-      },
-      {
-        id: "setting",
-        label: "Setting",
-        icon: <SettingsIcon />,
-        subItems: [],
-        path: "/setting",
       },
     ],
   },
@@ -175,7 +142,7 @@ const SIDEBAR_LIST = [
         label: "Buttons",
         icon: <KeyboardCommandKeyIcon />,
         subItems: [],
-        path: "/buttons",
+        path: "/button-ui",
       },
     ],
   },
