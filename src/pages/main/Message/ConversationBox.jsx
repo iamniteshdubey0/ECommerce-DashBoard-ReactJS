@@ -14,7 +14,7 @@ const ConversationBox = ({ conversation, user }) => {
       <Box
         sx={{
           my: 0.3,
-          maxWidth: "35vw",
+          maxWidth: {xs:"90%", md:'35vw'},
           p:2,
           pb: 1, 
           borderRadius: 2,

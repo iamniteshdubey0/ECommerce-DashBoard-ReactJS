@@ -75,11 +75,11 @@ const UserProfile = () => {
     <Box
       component="section"
       sx={(theme) => ({
-        p: 2,
+        p: { xs: 0.5, md: 2 },
         overflowY: "auto",
         maxHeight: "88vh",
         "&::-webkit-scrollbar": {
-          width: "3px",
+          width: { xs: "0px", md: "3px" },
         },
         "&::-webkit-scrollbar-thumb": {
           backgroundColor: theme.palette.primary.main,
@@ -98,8 +98,8 @@ const UserProfile = () => {
         text="Home"
         textlink="/"
       ></BreadcrumCustom>
-      <Grid container spacing={2} sx={{ mt: 4 }}>
-        <Grid size={5}>
+      <Grid container spacing={2} sx={{ mt: {xs:2, md:4} }}>
+        <Grid size={{ xs: 12, md: 5 }}>
           <Box
             sx={(theme) => ({
               p: 2,
@@ -375,13 +375,14 @@ const UserProfile = () => {
                           autoComplete="off"
                           component={"form"}
                         >
-                          <Grid size={3}>
+                          <Grid size={{ xs: 12, md: 3 }}>
                             <Box
                               component={"div"}
                               sx={{
                                 p: 1,
                                 display: "flex",
                                 justifyContent: "center",
+                                alignItems:{xs:'center', md:'flex-start'},
                                 flexDirection: "column",
                               }}
                             >
@@ -409,7 +410,7 @@ const UserProfile = () => {
                               </Button>
                             </Box>
                           </Grid>
-                          <Grid container size={9}>
+                          <Grid container size={{ xs: 12, md: 9 }}>
                             <Grid size={6}>
                               <TextField
                                 id="name"
@@ -644,8 +645,8 @@ const UserProfile = () => {
           </Box>
         </Grid>
 
-        <Grid container size={7}>
-          <Grid size={4}>
+        <Grid container size={{ xs: 12, md: 7 }}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <MiniCard
               color={"primary"}
               label={"test"}
@@ -653,7 +654,7 @@ const UserProfile = () => {
               icon={0}
             ></MiniCard>
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <MiniCard
               color={"error"}
               label={"test"}
@@ -661,7 +662,7 @@ const UserProfile = () => {
               icon={0}
             ></MiniCard>
           </Grid>
-          <Grid size={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <MiniCard
               color={"success"}
               label={"test"}

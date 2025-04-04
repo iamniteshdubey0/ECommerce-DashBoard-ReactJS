@@ -15,9 +15,11 @@ const SearchBox = () => {
       component="form"
       sx={{
         p: "2px 4px",
-        display: "flex",
+        display: 'flex',
+        justifyContent:'start',
+        flexWrap:'wrap',
         alignItems: "center",
-        width: {xs:0, md:300},
+        width: {xs:'0px', md:'100%'},
         backgroundColor:
           theme.palette.mode === "light"
             ? colors.whiteSmoke[200]
@@ -26,7 +28,7 @@ const SearchBox = () => {
     >
       <InputBase
         sx={{
-          display:{xs:'none'},
+          display:{xs:'none', md:'block'},
           ml: 1,
           flex: 1,
           "& .MuiInputBase-input": {
@@ -37,7 +39,7 @@ const SearchBox = () => {
                 ? colors.whiteSmoke[500]
                 : colors.oxfordBlue[500],
             fontSize: 16,
-            width: "auto",
+            width: "95%",
             padding: "8px 10px",
           },
         }}

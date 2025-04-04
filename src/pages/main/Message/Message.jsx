@@ -28,11 +28,11 @@ const Message = () => {
     <Box
       component="section"
       sx={(theme) => ({
-        p: 2,
+        p: { xs: 0.5, md: 2 },
         overflowY: "auto",
         maxHeight: "88vh",
         "&::-webkit-scrollbar": {
-          width: "3px",
+          width: { xs: "0px", md: "3px" },
         },
         "&::-webkit-scrollbar-thumb": {
           backgroundColor: theme.palette.primary.main,
@@ -48,8 +48,9 @@ const Message = () => {
     >
       <Grid container spacing={2}>
         <Grid
-          size={4}
+          size={{ xs: 12, md: 4 }}
           sx={(theme) => ({
+            maxHeight:{xs:'50vh', md:'inherit'},
             p: 1,
             borderRadius: 2,
             backgroundColor:
@@ -93,7 +94,7 @@ const Message = () => {
           </Grid>
         </Grid>
         <Grid
-          size={8}
+          size={{ xs: 12, md: 8 }}
           sx={(theme) => ({
             p: 2,
             borderRadius: 2,
@@ -112,7 +113,7 @@ const Message = () => {
               borderBottom: "1px solid grey",
             }}
           >
-            <Grid size={6} container sx={{ ustifyContent: "space-around" }}>
+            <Grid size={{ xs: 12, md: 6 }} container sx={{ ustifyContent: "space-around" }}>
               <Grid size={2}>
                 <ListItemAvatar>
                   <Badge
@@ -132,7 +133,7 @@ const Message = () => {
                   </Badge>
                 </ListItemAvatar>
               </Grid>
-              <Grid size={6}>
+              <Grid size={{ xs: 12, md: 6 }}>
                 <ListItemText>
                   <Typography
                     variant="h6"
@@ -160,7 +161,7 @@ const Message = () => {
                 </ListItemText>
               </Grid>
             </Grid>
-            <Grid size={6} sx={{}}>
+            <Grid size={{ xs: 12, md: 6 }} sx={{}}>
               <Stack direction="row" spacing={1}>
                 <IconButton aria-label="delete">
                   <DeleteIcon />
